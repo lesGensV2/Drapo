@@ -10,8 +10,6 @@ body a {
     color: white;
 }
 
-
-
 .en-tete {
     background-color: #0e1014;
     border-radius: 10px;
@@ -24,11 +22,13 @@ body a {
     /* font-family: "Inter var",ui-sans-serif,system-ui,-apple-system,system-ui,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji"; */
 
 }
+
 .en-tete p {
     display: flex;
     justify-content: center;
     font-size: 45px;
 }
+
 .en-tete a {
     color: white;
     text-decoration: none;
@@ -36,11 +36,10 @@ body a {
     text-decoration: auto;
     transition: text-decoration 0.5s ease;
 }
+
 .en-tete a:hover {
     text-decoration: underline;
 }
-
-
 
 .menu-jeu {
     border: 3px solid #000;
@@ -57,9 +56,11 @@ body a {
     display: flex;
     justify-content: space-around;
 }
+
 .menu-jeu p {
     text-decoration: none;
 }
+
 .menu-jeu img {
     max-width: 100px;
 }
@@ -92,14 +93,13 @@ body a {
     height: 30vh;
     max-height: 275px;
 }
+
 #box-drapeau img {
     margin-left: auto;
     margin-right: auto;
     width: auto;
     transition: 1s;
 }
-
-
 
 .display-box-essai {
     border: 3px solid #000;
@@ -114,12 +114,11 @@ body a {
     width: 400px;
     font-size: 5vh;
 }
+
 .display-box-essai p {
     margin-top: 0px;
     color: white;
 }
-
-
 
 #input-box {
     margin-left: auto;
@@ -133,8 +132,6 @@ body a {
     background-color: #0e1014;
 }
 
-
-
 .display-reponse {
     display: flex;
     justify-content: center; /* Centre horizontalement */
@@ -143,13 +140,16 @@ body a {
     border-radius: 10px;
     
 }
+
 .display-reponse p {
     display: flex;
     align-items: center;
 }
+
 .display-reponse input, .display-reponse button {
     margin: 5px; /* Optionnel : ajoute un espace entre l'input et le bouton */
 }
+
 .display-reponse input {
     border-radius: 5px;
     width: 320px;
@@ -161,12 +161,13 @@ body a {
     box-sizing: border-box;
     border-color: grey;
     color: white;
-
 }
+
 .display-reponse input::placeholder {
     color: white;
     font-size: 2.5vh;
 }
+
 .display-reponse input:focus {
     outline: transparent;
     color: white;
@@ -197,30 +198,29 @@ body a {
   width: auto;
   height: 5vh;
 }
+
 .display-reponse button:hover ,.btn-nsp button:hover {
   background-color: #374151;
 }
+
 .display-reponse button:focus ,.btn-nsp button:focus {
   box-shadow: none;
   outline: 2px solid transparent;
   outline-offset: 2px;
 }
 
-
-
 .btn-nsp {
     margin-top: 20px;
     display: flex;
     justify-content: center;
 }
+
 .btn-nsp button {
     min-width: 150px;
     background-color: #0e1014;
     display: flex;
     justify-content: center;
 }
-
-
 
 .display-score {
     color: white;
@@ -230,8 +230,6 @@ body a {
     justify-content: center;
     font-size: 3vh;
 }
-
-
 
 .Copyright {
     color: white;
