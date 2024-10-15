@@ -1,0 +1,227 @@
+body {
+    background-color: #14181e;
+    font-family: sans-serif;
+}
+body p {
+    color: white;
+}
+body a {
+    text-decoration: none;
+    color: white;
+}
+
+
+
+.en-tete {
+    background-color: #0e1014;
+    border-radius: 10px;
+    box-shadow: 0 -2px 5px rgba(0,0,0,0.1);
+    margin-top: -20px;
+    margin-bottom: 20px;
+    size: auto;
+    color: white;
+    height: 60px;
+    /* font-family: "Inter var",ui-sans-serif,system-ui,-apple-system,system-ui,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji"; */
+
+}
+.en-tete p {
+    display: flex;
+    justify-content: center;
+    font-size: 45px;
+}
+.en-tete a {
+    color: white;
+    text-decoration: none;
+    transition-property: text-decoration;
+    text-decoration: auto;
+    transition: text-decoration 0.5s ease;
+}
+.en-tete a:hover {
+    text-decoration: underline;
+}
+
+
+
+.menu-jeu {
+    border: 3px solid #000;
+    border-radius: 5px;
+    background-color: #14181e;
+    margin: auto;
+    padding: 10px;
+    transition: background-color 1s ease;
+    overflow: hidden;
+    height: 60px;
+    width: 400px;
+    font-size: 20px;
+    display: flex;
+    justify-content: space-around;
+}
+.menu-jeu p {
+    text-decoration: none;
+}
+.menu-jeu img {
+    max-width: 100px;
+}
+
+
+
+#box-drapeau {
+    border-radius: 3px;
+    background-color: #14181e;
+    margin: 0 auto;
+    padding: 10px;
+    display: flex;
+    margin-bottom: 20px; 
+    height: 30vh;
+    max-height: 275px;
+}
+#box-drapeau img {
+    margin-left: auto;
+    margin-right: auto;
+    width: auto;
+    transition: 1s;
+}
+
+
+
+.display-box-essai {
+    border: 3px solid #000;
+    border-radius: 5px;
+    background-color: #14181e;
+    margin: 0 auto;
+    padding: 20px;
+    transition: background-color 1s ease;
+    overflow: hidden;
+    height: 5vh;
+    min-height: 1vh;
+    width: 400px;
+    font-size: 5vh;
+    
+    
+}
+.display-box-essai p {
+    margin-top: 0px;
+    color: white;
+}
+
+
+
+#input-box {
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 40px;
+    padding: 10px;
+    width: 500px;
+    height: 6vh;
+    background-color: #f0f0f0;
+    box-shadow: 0 -2px 5px rgba(0,0,0,0.1);
+    background-color: #0e1014;
+}
+
+
+
+.display-reponse {
+    display: flex;
+    justify-content: center; /* Centre horizontalement */
+    align-items: center; /* Centre verticalement */
+    margin-top: 20px; /*Optionnel : ajoute un espace au-dessus */
+    border-radius: 10px;
+    
+}
+.display-reponse p {
+    display: flex;
+    align-items: center;
+}
+.display-reponse input, .display-reponse button {
+    margin: 5px; /* Optionnel : ajoute un espace entre l'input et le bouton */
+}
+.display-reponse input {
+    border-radius: 5px;
+    width: 320px;
+    height: 50px;
+    font-size: 22px;
+    background-color: #0e1014;
+    color: transparent;
+    border:50cm;
+    box-sizing: border-box;
+    border-color: grey;
+    color: white;
+
+}
+.display-reponse input::placeholder {
+    color: white;
+    font-size: 2.5vh;
+}
+.display-reponse input:focus {
+    outline: transparent;
+    color: white;
+}
+
+.display-reponse button, .btn-nsp button {
+  display: flex;
+  background-color: #111827;
+  border: 1px solid transparent;
+  border-radius: .75rem;
+  box-sizing: border-box;
+  color: #FFFFFF;
+  cursor: pointer;
+  flex: 0 0 auto;
+  font-family: "Inter var",ui-sans-serif,system-ui,-apple-system,system-ui,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";
+  font-size: clamp(10px, 2.5vh, 20px);
+  font-weight: 600;
+  line-height: 1.5rem;
+  padding: .75rem 1.2rem;
+  text-align: center;
+  align-items: center;
+  text-decoration: none #6B7280 solid;
+  text-decoration-thickness: auto;
+  transition-duration: .2s;
+  transition-property: background-color,border-color,color,fill,stroke;
+  transition-timing-function: cubic-bezier(.4, 0, 0.2, 1);
+  touch-action: manipulation;
+  width: auto;
+  height: 5vh;
+}
+.display-reponse button:hover ,.btn-nsp button:hover {
+  background-color: #374151;
+}
+.display-reponse button:focus ,.btn-nsp button:focus {
+  box-shadow: none;
+  outline: 2px solid transparent;
+  outline-offset: 2px;
+}
+
+
+
+.btn-nsp {
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+}
+.btn-nsp button {
+    min-width: 150px;
+    background-color: #0e1014;
+    display: flex;
+    justify-content: center;
+}
+
+
+
+.display-score {
+    color: white;
+    margin-top: 10px;
+    margin-bottom: -2vh;
+    display: flex;
+    justify-content: center;
+    font-size: 3vh;
+}
+
+
+
+.Copyright {
+    color: white;
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    font-size: 15px;
+}
