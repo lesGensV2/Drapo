@@ -47,6 +47,7 @@ body a {
     border-radius: 5px;
     background-color: #14181e;
     margin: auto;
+    margin-bottom: 3vh;
     padding: 10px;
     transition: background-color 1s ease;
     overflow: hidden;
@@ -96,8 +97,6 @@ body a {
     min-height: 1vh;
     width: 400px;
     font-size: 5vh;
-    
-    
 }
 .display-box-essai p {
     margin-top: 0px;

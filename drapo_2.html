@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Drapo</title>
+    <link href="css/style.css" type="text/css" rel="stylesheet" />
+
+</head>
+<body>
+    <script src="javascript/reponse.js"></script>
+    <div class="en-tete" >
+        <p><a href="index.html">Drapo</a></p>
+    </div>
+
+    <div class="display-score">
+        <p>Score total : <span id="score">0</span> </p>
+    </div>
+
+    <div id="box-drapeau">
+        <img id="randomImage" alt="Drapeau">
+    </div>
+    
+    <div class="display-box-essai" id="display-box1"></div>
+
+    <div id="input-box" class="display-reponse">
+        <input  type="text" id="text-input" placeholder="Entrez le nom du pays" autocomplete="off">
+        <button  onclick="addText()">Ajouter</button>
+    </div>
+    <div class="btn-nsp">
+        <button onclick="resetPage()">Passer</button>
+    </div>
+
+    <div class="Copyright">
+        <p>Copyright ma queue</p>
+    </div>
+
+    
+</body>
+</html>
