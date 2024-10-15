@@ -286,6 +286,7 @@ function addText() {
                 displayBox.appendChild(newText);
                 displayBox.style.backgroundColor = "green";
                 displayBox.style.color = "white"; 
+                displayBox.style.fontSize = '5vh';
                 input.value = '';
 
                 if (countryName.length >= 20) {
@@ -304,6 +305,7 @@ function addText() {
                 displayBox.appendChild(newText);
                 displayBox.style.backgroundColor = "darkred";
                 displayBox.style.color = "white";
+                displayBox.style.fontSize = '5vh';
                 input.value = '';
 
                 if (countryName.length >= 20) {
