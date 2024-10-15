@@ -1,0 +1,177 @@
+body {
+    background-color: #14181e;
+    font-family: sans-serif;
+}
+body p {
+    color: white;
+}
+.en-tete {
+    background-color: #0e1014;
+    border-radius: 10px;
+    box-shadow: 0 -2px 5px rgba(0,0,0,0.1);
+    margin-top: -20px;
+    margin-bottom: 20px;
+    size: auto;
+    color: white;
+    height: 60px;
+}
+.en-tete p {
+    display: flex;
+    justify-content: center;
+    font-size: 45px;
+}
+.display-box-essai {
+    border: 3px solid #000;
+    border-radius: 5px;
+    background-color: #14181e;
+    margin: 0 auto;
+    padding: 20px;
+    transition: background-color 1s ease;
+    overflow: hidden;
+    height: 40px;
+    width: 400px;
+    font-size: 30px;
+    border-radius: 1.3em;
+    display: flex;
+    justify-content: center;
+    align-items: center;    
+}
+
+.display-box-essai p {
+    margin-top: -5px;
+    color: white;
+}
+
+#box-drapeau {
+    border: 5px solid #000;
+    border-radius: 3px;
+    background-color: #14181e;
+    margin: 0 auto;
+    padding: 10px;
+    display: flex;
+    margin-bottom: 20px; 
+    height: 225px;
+    width: 450px;
+}
+
+#Pays{
+    border: 5px solid #000;
+    border-radius: 3px;
+    background-color: #14181e;
+    margin: auto;
+    padding: 10px;
+    display: flex;
+    margin-bottom: 20px; 
+    height: 50px;
+    width: 450px;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.5em;
+    color: white;
+    border-radius: 1.3em;
+    font-size: 1.9em;
+}
+
+#box-drapeau img {
+    margin-left: auto;
+    margin-right: auto;
+    width: auto;
+}
+#input-box {
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 40px;
+    padding: 10px;
+    width: 500px;
+    background-color: #f0f0f0;
+    box-shadow: 0 -2px 5px rgba(0,0,0,0.1);
+    background-color: #0e1014;
+    border-radius: 1.3em;
+}
+.display-reponse {
+    display: flex;
+    justify-content: center; /* Centre horizontalement */
+    align-items: center; /* Centre verticalement */
+    margin-top: 20px; /* Optionnel : ajoute un espace au-dessus */
+    border-radius: 10px;
+    
+}
+.display-reponse input, .display-reponse button {
+    margin: 5px; /* Optionnel : ajoute un espace entre l'input et le bouton */
+}
+.display-reponse input {
+    border-radius: 5px;
+    width: 320px;
+    height: 50px;
+    font-size: 22px;
+    background-color: #0e1014;
+    color: transparent;
+    border:50cm;
+    box-sizing: border-box;
+    border-color: grey;
+    color: white;
+
+}
+.display-reponse input::placeholder {
+    color: white;
+}
+.display-reponse input:focus {
+    outline: transparent;
+    color: white;
+}
+
+.display-reponse button, .btn-nsp button {
+  background-color: #111827;
+  border: 1px solid transparent;
+  border-radius: .75rem;
+  box-sizing: border-box;
+  color: #FFFFFF;
+  cursor: pointer;
+  flex: 0 0 auto;
+  font-family: "Inter var",ui-sans-serif,system-ui,-apple-system,system-ui,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";
+  font-size: 1.125rem;
+  font-weight: 600;
+  line-height: 1.5rem;
+  padding: .75rem 1.2rem;
+  text-align: center;
+  text-decoration: none #6B7280 solid;
+  text-decoration-thickness: auto;
+  transition-duration: .2s;
+  transition-property: background-color,border-color,color,fill,stroke;
+  transition-timing-function: cubic-bezier(.4, 0, 0.2, 1);
+  touch-action: manipulation;
+  width: auto;
+}
+.display-reponse button:hover ,.btn-nsp button:hover {
+  background-color: #374151;
+}
+.display-reponse button:focus ,.btn-nsp button:focus {
+  box-shadow: none;
+  outline: 2px solid transparent;
+  outline-offset: 2px;
+}
+.btn-nsp {
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+}
+.btn-nsp button {
+    min-width: 150px;
+    background-color: #0e1014;
+}
+
+.display-score {
+    color: white;
+    margin-top: 10px;
+    display: flex;
+    justify-content: center;
+    font-size: 30px;
+}
+
+.Copyright {
+    color: white;
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    font-size: 15px;
+}
