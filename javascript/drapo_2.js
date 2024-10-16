@@ -1,6 +1,6 @@
 
 var currentBoxIndex = 1; // Variable globale pour suivre l'index de la boîte actuelle
-var gagne = 0
+var gagne = 0;
 var deja_appuyer = 0;
 
 
@@ -200,163 +200,75 @@ const dico_drapeau = {
 }
 
 
-function displayRandomImage() {
+function displayRandomImage(elementId) {
     const countries = Object.keys(dico_drapeau); // Récupère toutes les clés du dictionnaire (noms des pays)
     const randomIndex = Math.floor(Math.random() * countries.length); // Génère un index aléatoire basé sur le nombre de pays
     const randomCountry = countries[randomIndex]; // Sélectionne un pays aléatoire
-    const imgElement = document.getElementById('randomImage'); // Sélectionne l'élément img
-    imgElement.src = dico_drapeau[randomCountry]; // Change l'attribut src de l'image en fonction du pays aléatoire
-    document.getElementById('text-input').value = '';
-    document.getElementById('display-box1').textContent = '';
-
+    const imgElement = document.getElementById(elementId); // Sélectionne l'élément img par son ID passé en argument
+    if (imgElement) {
+        imgElement.src = dico_drapeau[randomCountry]; // Change l'attribut src de l'image en fonction du pays aléatoire
+    }
 }
 
+
 function resetPage() {
-    var box_reponse = document.getElementById('display-box1')
+    var box_reponse = document.getElementById('display-box1');
     displayRandomImage();
     box_reponse.style.backgroundColor = "#0e1014";
     box_reponse.textContent = '';
 }
 
-// function addTextEssai() {
-//     var input = document.getElementById('text-input');
-//     var boxId = 'display-box' + currentBoxIndex;
-//     var displayBox = document.getElementById(boxId);
-
-//     if (displayBox && currentBoxIndex < 6 && gagne != 1) {
-
-//         var currentImagePath = document.getElementById('randomImage').src;
-
-//         var imageName = currentImagePath.split('/').pop(); // Récupère juste le nom de l'image (ex: "Flag_of_France.svg.png")
-//         var countryName = Object.keys(dico_drapeau).find(key => dico_drapeau[key].includes(imageName)); // Trouve le nom du pays correspondant
-
-//         if (input.value.toLowerCase() === countryName.toLowerCase()) {
-//             var newText = document.createElement('p');
-//             newText.textContent = countryName;
-//             displayBox.appendChild(newText);
-//             document.getElementById(boxId).style.backgroundColor = "green";
-//             input.value = '';
-            
-//             gagne = 1
-
-//             // Incrémente l'index de la boîte actuelle
-//             currentBoxIndex++;
-//         }
-//         else if (input.value != '') {
-//             var newText = document.createElement('p');
-//             newText.textContent = input.value;
-//             displayBox.appendChild(newText);
-//             input.value = '';
-
-//             // Incrémente l'index de la boîte actuelle
-//             currentBoxIndex++;
-//         } 
-//     }else {
-//             console.error('Boîte non trouvée : ' + boxId);
-//         }
-//     if (gagne == 1) {
-
-//     }
-// }
-
-function addText() {
-    var input = document.getElementById('text-input');
-    var boxId = 'display-box1';
-    var displayBox = document.getElementById(boxId);
-    displayBox.textContent = '';
-
-    if (displayBox && currentBoxIndex < 6 && gagne != 1 || -1) {
-
-        var currentImagePath = document.getElementById('randomImage').src;
-        var imageName = currentImagePath.split('/').pop(); // Récupère juste le nom de l'image (ex: "Flag_of_France.svg.png")
-        var countryName = Object.keys(dico_drapeau).find(key => dico_drapeau[key].includes(imageName)); // Trouve le nom du pays correspondant
-        
-        // console.log(input.value.toLowerCase())
-        
-        // console.log(input.value.toLowerCase())
-        // console.log(countryName.toLowerCase())
-        console.log(gagne)
-
-        var newText = document.createElement('p');
-
-        if (input.value.toLowerCase() && countryName.toLowerCase()){
-
-            if (input.value.toLowerCase() === countryName.toLowerCase()) {
-                newText.textContent = countryName;
-                displayBox.appendChild(newText);
-                displayBox.style.backgroundColor = "green";
-                displayBox.style.color = "white"; 
-                displayBox.style.fontSize = '5vh';
-                input.value = '';
-
-                if (countryName.length >= 20) {
-                    displayBox.style.fontSize = '2.5vh';
-                } else if (countryName.length >= 15) {
-                    displayBox.style.fontSize = '3.3vh';
-                } else if (countryName.length >= 10) {
-                    displayBox.style.fontSize = '4vh';
-                }
-                
-                gagne = 1
-                gagnerPoint()
-            }
-            else if (input.value != '') {
-                newText.textContent = input.value;
-                displayBox.appendChild(newText);
-                displayBox.style.backgroundColor = "darkred";
-                displayBox.style.color = "white";
-                displayBox.style.fontSize = '5vh';
-                input.value = '';
-
-                if (countryName.length >= 20) {
-                    displayBox.style.fontSize = '2.5vh';
-                } else if (countryName.length >= 15) {
-                    displayBox.style.fontSize = '3.3vh';
-                } else if (countryName.length >= 10) {
-                    displayBox.style.fontSize = '4vh';
-                }
-
-                displayBox.textContent = "C'était : " +countryName;
-                gagne = -1;
-            } 
-        }else if(gagne == 1 || -1){
-            resetPage();
-            gagne = 0;
-        }
-        else {
-            console.log('Erreur toLowerCase');
-        }
-    } else if (gagne == -1 || 1 ) {
-        resetPage();
-        gagne = 0;
-    }else {
-            console.error('Boîte non trouvée : ' + boxId);
-        }
-}
-
 // Fonction pour récupérer le score depuis LocalStorage ou initialiser à 0
 function initialiserScore() {
-    let score = localStorage.getItem('score'); // Récupère le score depuis LocalStorage
+    let score = localStorage.getItem('score-drapeau2'); // Récupère le score depuis LocalStorage
     if (score === null) {
         score = 0; // Si aucun score n'existe, on le met à 0
     }
-    document.getElementById('score').textContent = score; // Affiche le score
+    document.getElementById('score-drapeau2').textContent = score; // Affiche le score
 }
 
 // Fonction pour augmenter le score et le stocker
 function gagnerPoint() {
-    let score = parseInt(localStorage.getItem('score')); // Récupère le score actuel
+    let score = parseInt(localStorage.getItem('score-drapeau2')); // Récupère le score actuel
     if (isNaN(score)) {
         score = 0; // Si aucun score n'existe, initialise à 0
     }
     score++; // Incrémente le score
-    localStorage.setItem('score', score); // Stocke le nouveau score dans LocalStorage
-    document.getElementById('score').textContent = score; // Met à jour l'affichage
+    localStorage.setItem('score-drapeau2', score); // Stocke le nouveau score dans LocalStorage
+    document.getElementById('score-drapeau2').textContent = score; // Met à jour l'affichage
 }
 
+function passer() {
+    var box_reponse = document.getElementById('display-box1');
+    var currentImagePath = document.getElementById('randomImage').src;
+    var imageName = currentImagePath.split('/').pop(); // Récupère juste le nom de l'image (ex: "Flag_of_France.svg.png")
+    var countryName = Object.keys(dico_drapeau).find(key => dico_drapeau[key].includes(imageName)); // Trouve le nom du pays correspondant
+    
+    resetPage();
+    box_reponse.textContent = "C'etait " + countryName;
+    box_reponse.style.backgroundColor = "darkorange";
+    box_reponse.style.color = "white";
+    box_reponse.style.fontSize = '5vh';
+
+
+
+    if (countryName.length >= 20) {
+        box_reponse.style.fontSize = '2.5vh';
+    } else if (countryName.length >= 15) {
+        box_reponse.style.fontSize = '3.3vh';
+    } else if (countryName.length >= 10) {
+        box_reponse.style.fontSize = '4vh';
+    }
+}
 
 window.onload = function() {
-    displayRandomImage();  // Appelle la fonction pour afficher l'image aléatoire
+    // Appelle la fonction pour afficher l'image aléatoire
+    displayRandomImage('choix-drapeau1');
+    displayRandomImage('choix-drapeau2');
+    displayRandomImage('choix-drapeau3');
+    displayRandomImage('choix-drapeau4');
+    
+      
     initialiserScore();
     
     var inputElement = document.getElementById('text-input');
