@@ -4,24 +4,47 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Drapo</title>
-    <link href="css/style.css" type="text/css" rel="stylesheet" />
+    <link href="css/drapo_2.css" type="text/css" rel="stylesheet" />
 
 </head>
 <body>
-    <script src="javascript/reponse.js"></script>
+    <script src="javascript/drapo_2.js"></script>
     <div class="en-tete" >
         <p><a href="index.html">Drapo</a></p>
     </div>
 
     <div class="display-score">
-        <p>Score total : <span id="score">0</span> </p>
+        <p>Score total : <span id="score-drapeau2">0</span> </p>
     </div>
 
-    <div id="box-drapeau">
-        <img id="randomImage" alt="Drapeau">
-    </div>
     
-    <div class="display-box-essai" id="display-box1"></div>
+    
+    <div class="display-nom-pays" id="display-nom"></div>
+
+    <div class="choix-drapeau">
+        <div id="box-choix-drapeau1">
+            <div class="image-container">
+                <img id="choix-drapeau1" alt="Drapeau">
+                <button onclick="alert('Bouton cliqué!')"></button>
+            </div>
+            <div class="image-container">
+                <img id="choix-drapeau2" alt="Drapeau">
+                <button onclick="alert('Bouton cliqué!')"></button>
+            </div>
+            
+
+        </div>
+        <div id="box-choix-drapeau2">
+            <div class="image-container">
+                <img id="choix-drapeau3" alt="Drapeau">
+                <button onclick="alert('Bouton cliqué!')"></button>
+            </div>
+            <div class="image-container">
+                <img id="choix-drapeau4" alt="Drapeau">
+                <button onclick="alert('Bouton cliqué!')"></button>
+            </div>
+        </div>
+    </div>
 
     <div id="input-box" class="display-reponse">
         <input  type="text" id="text-input" placeholder="Entrez le nom du pays" autocomplete="off">
