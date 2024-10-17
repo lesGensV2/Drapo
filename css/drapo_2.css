@@ -66,6 +66,7 @@ body a {
     opacity: 0; /* Rend le bouton invisible */
 }
 
+
 .box-choix-drapeau1, .box-choix-drapeau2 {
     display: flex;
     justify-content: center; /* Centre les éléments horizontalement */
@@ -80,41 +81,6 @@ body a {
 }
 
 
-/* #Pays{
-    border: 5px solid #000;
-    border-radius: 3px;
-    background-color: #14181e;
-    margin: auto;
-    padding: 10px;
-    display: flex;
-    margin-bottom: 20px; 
-    height: 50px;
-    width: 450px;
-    justify-content: center;
-    align-items: center;
-    font-size: 1.5em;
-    color: white;
-    border-radius: 1.3em;
-    font-size: 1.9em;
-} */
-
-#box-drapeau {
-    border-radius: 3px;
-    background-color: #14181e;
-    margin: 0 auto;
-    padding: 10px;
-    display: flex;
-    margin-bottom: 20px; 
-    height: 30vh;
-    max-height: 275px;
-}
-
-#box-drapeau img {
-    margin-left: auto;
-    margin-right: auto;
-    width: auto;
-    transition: 1s;
-}
 
 .display-box-essai {
     border: 3px solid #000;
@@ -159,6 +125,7 @@ body a {
 .display-reponse p {
     display: flex;
     align-items: center;
+    font-size: 4vh;
 }
 
 .display-reponse input, .display-reponse button {
