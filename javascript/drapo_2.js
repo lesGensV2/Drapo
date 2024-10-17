@@ -210,10 +210,25 @@ function displayRandomImage(elementId) {
     }
 }
 
+function displayRandomName() {
+    const list_id = ['choix-drapeau1','choix-drapeau2','choix-drapeau3','choix-drapeau4']
+    const randomId = list_id[Math.floor(Math.random() * list_id.length)];
+    
+    console.log(randomId)
 
+    var currentImagePath = document.getElementById(randomId).src;
+    var imageName = currentImagePath.split('/').pop(); // Récupère juste le nom de l'image (ex: "Flag_of_France.svg.png")
+    var randomCountry = Object.keys(dico_drapeau).find(key => dico_drapeau[key].includes(imageName)); // Trouve le nom du pays correspondant
+    
+    document.getElementById('nom-random').textContent = randomCountry;
+}
 function resetPage() {
     var box_reponse = document.getElementById('display-box1');
-    displayRandomImage();
+    displayRandomImage('choix-drapeau1');
+    displayRandomImage('choix-drapeau2');
+    displayRandomImage('choix-drapeau3');
+    displayRandomImage('choix-drapeau4');
+    displayRandomName();
     box_reponse.style.backgroundColor = "#0e1014";
     box_reponse.textContent = '';
 }
@@ -268,11 +283,10 @@ window.onload = function() {
     displayRandomImage('choix-drapeau3');
     displayRandomImage('choix-drapeau4');
     
-      
+    displayRandomName() ; 
     initialiserScore();
     
     var inputElement = document.getElementById('text-input');
-    inputElement.focus();
 
     
     if (inputElement) {
