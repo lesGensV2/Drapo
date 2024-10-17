@@ -2,6 +2,7 @@
 var currentBoxIndex = 1; // Variable globale pour suivre l'index de la boîte actuelle
 var gagne = 0;
 var deja_appuyer = 0;
+const list_id = ['choix-drapeau1','choix-drapeau2','choix-drapeau3','choix-drapeau4']
 
 
 const dico_drapeau = {
@@ -210,10 +211,49 @@ function displayRandomImage(elementId) {
     }
 }
 
+function displayRandomName() {
+    
+    const imageSources = [];
+    const imageSet = new Set();
+    var double = true;
+
+    while (double == true)
+        // Récupérer toutes les sources d'images
+        list_id.forEach(id => {
+            var imagePath = document.getElementById(id).src;
+            var imageName = imagePath.split('/').pop(); // Récupérer juste le nom de l'image
+            imageSources.push(imageName);
+
+            // Ajouter à l'ensemble pour vérifier les doublons
+            if (imageSet.has(imageName)) {
+                console.log(`Doublon trouvé : ${imageName}`);
+            } else {
+                imageSet.add(imageName);
+                double = false;
+            }
+        });
+
+
+    const randomId = list_id[Math.floor(Math.random() * list_id.length)];
+    var currentImagePath = document.getElementById(randomId).src;
+    var imageName = currentImagePath.split('/').pop(); // Récupère juste le nom de l'image (ex: "Flag_of_France.svg.png")
+    var randomCountry = Object.keys(dico_drapeau).find(key => dico_drapeau[key].includes(imageName)); // Trouve le nom du pays correspondant
+    
+    document.getElementById('nom-random').textContent = randomCountry;
+}
+
+function testResponse(id_clicked) {
+    
+}
 
 function resetPage() {
     var box_reponse = document.getElementById('display-box1');
-    displayRandomImage();
+    
+    displayRandomImage('choix-drapeau1');
+    displayRandomImage('choix-drapeau2');
+    displayRandomImage('choix-drapeau3');
+    displayRandomImage('choix-drapeau4');
+    displayRandomName();
     box_reponse.style.backgroundColor = "#0e1014";
     box_reponse.textContent = '';
 }
@@ -268,35 +308,34 @@ window.onload = function() {
     displayRandomImage('choix-drapeau3');
     displayRandomImage('choix-drapeau4');
     
-      
+    displayRandomName() ; 
     initialiserScore();
     
     var inputElement = document.getElementById('text-input');
-    inputElement.focus();
 
     
-    if (inputElement) {
-        inputElement.addEventListener('keypress', function(event) {
-            if (event.key === 'Enter') {
-                if (gagne == 1 && deja_appuyer == 1) {
-                    gagne = 0;
-                    deja_appuyer = 0;
-                    resetPage();
-                }
-                else if (gagne == -1 && deja_appuyer == 1) {
-                    gagne = 0
-                    deja_appuyer = 0
-                    resetPage()
-                }
-                else {
-                    addText();  // Appelle la fonction lorsque "Enter" est pressé
-                    deja_appuyer = 1;
-                }
+    // if (inputElement) {
+    //     inputElement.addEventListener('keypress', function(event) {
+    //         if (event.key === 'Enter') {
+    //             if (gagne == 1 && deja_appuyer == 1) {
+    //                 gagne = 0;
+    //                 deja_appuyer = 0;
+    //                 resetPage();
+    //             }
+    //             else if (gagne == -1 && deja_appuyer == 1) {
+    //                 gagne = 0
+    //                 deja_appuyer = 0
+    //                 resetPage()
+    //             }
+    //             else {
+    //                 addText();  // Appelle la fonction lorsque "Enter" est pressé
+    //                 deja_appuyer = 1;
+    //             }
                 
-            }
+    //         }
             
-        });
-    } else {
-        console.error("L'élément avec l'ID 'text-input' n'a pas été trouvé.");
-    }
+    //     });
+    // } else {
+    //     console.error("L'élément avec l'ID 'text-input' n'a pas été trouvé.");
+    // }
 };

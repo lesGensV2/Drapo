@@ -9,7 +9,7 @@
 </head>
 <body>
     <script src="javascript/drapo_2.js"></script>
-    <div class="en-tete" >
+    <div class="header" >
         <p><a href="index.html">Drapo</a></p>
     </div>
 
@@ -22,41 +22,37 @@
     <div class="display-nom-pays" id="display-nom"></div>
 
     <div class="choix-drapeau">
-        <div id="box-choix-drapeau1">
+        <div id="box-choix-drapeau1" class="box-choix-drapeau">
             <div class="image-container">
-                <img id="choix-drapeau1" alt="Drapeau">
-                <button onclick="alert('Bouton cliqué!')"></button>
+                <img id="choix-drapeau1" alt="Drapeau 1" class="drapeau">
+                <button class="invisible-button" onclick="testResponse()"></button>
             </div>
             <div class="image-container">
-                <img id="choix-drapeau2" alt="Drapeau">
-                <button onclick="alert('Bouton cliqué!')"></button>
+                <img id="choix-drapeau2" alt="Drapeau 2" class="drapeau">
+                <button class="invisible-button" onclick="testResponse()"></button>
             </div>
-            
-
         </div>
-        <div id="box-choix-drapeau2">
+    
+        <div id="box-choix-drapeau2" class="box-choix-drapeau">
             <div class="image-container">
-                <img id="choix-drapeau3" alt="Drapeau">
-                <button onclick="alert('Bouton cliqué!')"></button>
+                <img id="choix-drapeau3" alt="Drapeau 3" class="drapeau">
+                <button class="invisible-button" onclick="testResponse()"></button>
             </div>
             <div class="image-container">
-                <img id="choix-drapeau4" alt="Drapeau">
-                <button onclick="alert('Bouton cliqué!')"></button>
+                <img id="choix-drapeau4" alt="Drapeau 4" class="drapeau">
+                <button class="invisible-button" onclick="testResponse()"></button>
             </div>
         </div>
     </div>
+    
 
     <div id="input-box" class="display-reponse">
-        <input  type="text" id="text-input" placeholder="Entrez le nom du pays" autocomplete="off">
-        <button  onclick="addText()">Ajouter</button>
+        <p id="nom-random"></p>
     </div>
     <div class="btn-nsp">
         <button onclick="resetPage()">Passer</button>
     </div>
 
-    <div class="Copyright">
-        <p>Copyright ma queue</p>
-    </div>
 
     
 </body>
