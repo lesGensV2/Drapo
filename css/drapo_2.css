@@ -44,6 +44,7 @@ body a {
 .image-container {
     position: relative; /* Permet de positionner le bouton par rapport à ce conteneur */
     display: inline-block;
+    border-radius: 5px;
 }
 .choix-drapeau {
     display: flex;

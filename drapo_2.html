@@ -23,24 +23,26 @@
 
     <div class="choix-drapeau">
         <div id="box-choix-drapeau1" class="box-choix-drapeau">
-            <div class="image-container">
+            <div class="image-container" id="image-container1">
                 <img id="choix-drapeau1" alt="Drapeau 1" class="drapeau">
-                <button class="invisible-button" onclick="testResponse()"></button>
+                <button class="invisible-button" id="invisible-button1" onclick="testResponse('choix-drapeau1')"></button>
             </div>
-            <div class="image-container">
+
+            <div class="image-container" id="image-container2">
                 <img id="choix-drapeau2" alt="Drapeau 2" class="drapeau">
-                <button class="invisible-button" onclick="testResponse()"></button>
+                <button class="invisible-button" id="invisible-button2" onclick="testResponse('choix-drapeau2')"></button>
             </div>
         </div>
     
         <div id="box-choix-drapeau2" class="box-choix-drapeau">
-            <div class="image-container">
+            <div class="image-container" id="image-container3">
                 <img id="choix-drapeau3" alt="Drapeau 3" class="drapeau">
-                <button class="invisible-button" onclick="testResponse()"></button>
+                <button class="invisible-button" id="invisible-button3" onclick="testResponse('choix-drapeau3')"></button>
             </div>
-            <div class="image-container">
+
+            <div class="image-container" id="image-container4">
                 <img id="choix-drapeau4" alt="Drapeau 4" class="drapeau">
-                <button class="invisible-button" onclick="testResponse()"></button>
+                <button class="invisible-button" id="invisible-button4" onclick="testResponse('choix-drapeau4')"></button>
             </div>
         </div>
     </div>
@@ -50,7 +52,7 @@
         <p id="nom-random"></p>
     </div>
     <div class="btn-nsp">
-        <button onclick="resetPage()">Passer</button>
+        <button onclick="testResponse('passer')">Passer</button>
     </div>
 
 
