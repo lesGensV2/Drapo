@@ -284,9 +284,9 @@ function addText() {
                 input.value = '';
 
                 if (countryName.length >= 20) {
-                    displayBox.style.fontSize = '2.5vh';
+                    displayBox.style.fontSize = '3.1vh';
                 } else if (countryName.length >= 15) {
-                    displayBox.style.fontSize = '3.3vh';
+                    displayBox.style.fontSize = '3.5vh';
                 } else if (countryName.length >= 10) {
                     displayBox.style.fontSize = '4vh';
                 }
