@@ -273,6 +273,8 @@ function addText() {
         var countryName = Object.keys(dico_drapeau).find(key => dico_drapeau[key].includes(imageName)); // Trouve le nom du pays correspondant
         var newText = document.createElement('p');
 
+        console.log(input.value.toUpperCase())
+
         if (input.value.toLowerCase() && countryName.toLowerCase()){
 
             if (input.value.toLowerCase() === countryName.toLowerCase()) {
@@ -389,7 +391,7 @@ window.onload = function() {
                     resetPage();
                 }
                 else if (gagne == -1 && deja_appuyer == 1) {
-                    gagne = 0
+                    gagne = 0 
                     deja_appuyer = 0
                     resetPage()
                 }
