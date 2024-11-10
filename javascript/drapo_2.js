@@ -3,6 +3,7 @@ var currentBoxIndex = 1; // Variable globale pour suivre l'index de la boîte ac
 var gagne = 0;
 var clique = 0; 
 var deja_appuyer = 0;
+var pass_clicked = 0;
 const list_id = ['choix-drapeau1','choix-drapeau2','choix-drapeau3','choix-drapeau4']
 var searched_countrie;
 
@@ -217,39 +218,56 @@ function displayRandomImage(elementId) {
 
 
 function displayRandomName() {
-    
     const imageSources = [];
     const imageSet = new Set();
-    var double = true;
+    let double = false;
 
-    while (double == true)
-        // Récupérer toutes les sources d'images
-        list_id.forEach(id => {
-            const imageSources = [];
-            const imageSet = new Set();
-            var imagePath = document.getElementById(id).src;
-            var imageName = imagePath.split('/').pop(); // Récupérer juste le nom de l'image
-            imageSources.push(imageName);
+    // Récupérer toutes les sources d'images et vérifier les doublons
+    list_id.forEach(id => {
+        const imagePath = document.getElementById(id).src;
+        const imageName = imagePath.split('/').pop(); // Récupérer juste le nom de l'image
+        imageSources.push(imageName);
 
-            // Ajouter à l'ensemble pour vérifier les doublons
-            if (imageSet.has(imageName)) {
-                console.log(`Doublon trouvé : ${imageName}`);
-                double = true;
-            } else {
-                imageSet.add(imageName);
-                double = false;
-            }
-        });
+        // Vérifier si l'image est déjà dans l'ensemble
+        if (imageSet.has(imageName)) {
+            console.log(`Doublon trouvé : ${imageName}`);
+            double = true;
+            displayRandomImage(id); // affiche une nouvelle image
+        } else {
+            imageSet.add(imageName);
+        }
+    });
 
-
+    // Sélectionner un ID aléatoire
     const randomId = list_id[Math.floor(Math.random() * list_id.length)];
-    var currentImagePath = document.getElementById(randomId).src;
-    var imageName = currentImagePath.split('/').pop(); // Récupère juste le nom de l'image (ex: "Flag_of_France.svg.png")
-    var randomCountry = Object.keys(dico_drapeau).find(key => dico_drapeau[key].includes(imageName)); // Trouve le nom du pays correspondant
+    const currentImagePath = document.getElementById(randomId).src;
+    const imageName = currentImagePath.split('/').pop(); // Récupère juste le nom de l'image
+    const box_name = document.getElementById('nom-random');
+
+    // Si des doublons sont trouvés, il n'est pas nécessaire de continuer
+    if (double) {
+        displayRandomName();
+        console.log("Il y a des doublons dans les images.");
+        return randomId;
+    }
     
-    document.getElementById('nom-random').textContent = randomCountry;
+    // Trouver le nom du pays correspondant dans le dictionnaire
+    const randomCountry = Object.keys(dico_drapeau).find(key => dico_drapeau[key].includes(imageName));
+    
+    // Afficher le nom du pays
+    box_name.textContent = randomCountry || "Pays inconnu";
+    
+    if (randomCountry.length >= 20) {
+        box_name.style.fontSize = '3vh';
+    } else if (randomCountry.length >= 15) {
+        box_name.style.fontSize = '3.5vh';
+    } else if (randomCountry.length >= 10) {
+        box_name.style.fontSize = '4vh';
+    }
+
     return randomId;
 }
+
 
 
 
@@ -259,6 +277,7 @@ function testResponse(id_clicked) {
         var currentImagePath = document.getElementById(id_clicked).src;
         var imageName = currentImagePath.split('/').pop(); // Récupère juste le nom de l'image
         var randomCountry = Object.keys(dico_drapeau).find(key => dico_drapeau[key].includes(imageName)); // Trouve le pays correspondant
+        
 
         // Désactive les clics supplémentaires
         clique = 1;
@@ -283,13 +302,21 @@ function testResponse(id_clicked) {
             }, 1500);
         }
     }else if (id_clicked == 'passer') {
-        document.getElementById(String(searched_countrie)).style.backgroundColor = 'orange'
+        // Vérifie si l'action a déjà été effectuée
+        if (pass_clicked === 1) {
+            return; // Quitte la fonction sans exécuter le code suivant
+        }
+        
+        document.getElementById(String(searched_countrie)).style.backgroundColor = 'orange';
+        pass_clicked = 1;
+        
         setTimeout(function() {
             resetPage();
             clique = 0; // Réactive les clics après la réinitialisation
+            pass_clicked = 0;
         }, 1500);
-        
     }
+    
 }
 
 
