@@ -194,15 +194,16 @@ const dico_drapeau = {
     "Zimbabwe": "images/Flag_of_Zimbabwe.svg.png",
 }
 
-function displayRandomImage() {
+function displayRandomImage(id) {
     const countries = Object.keys(dico_drapeau); // Récupère toutes les clés du dictionnaire (noms des pays)
     const randomIndex = Math.floor(Math.random() * countries.length); // Génère un index aléatoire basé sur le nombre de pays
     const randomCountry = countries[randomIndex]; // Sélectionne un pays aléatoire
-    const imgElement = document.getElementById('randomImage'); // Sélectionne l'élément img
+    const imgElement = document.getElementById(id); // Sélectionne l'élément img
     imgElement.src = dico_drapeau[randomCountry]; // Change l'attribut src de l'image en fonction du pays aléatoire
 
 }
 
 window.onload = function() {
-    displayRandomImage()
+    displayRandomImage('randomImage1')
+    displayRandomImage('randomImage2')
 }

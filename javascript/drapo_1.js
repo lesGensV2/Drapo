@@ -218,46 +218,6 @@ function resetPage() {
     box_reponse.textContent = '';
 }
 
-// function addTextEssai() {
-//     var input = document.getElementById('text-input');
-//     var boxId = 'display-box' + currentBoxIndex;
-//     var displayBox = document.getElementById(boxId);
-
-//     if (displayBox && currentBoxIndex < 6 && gagne != 1) {
-
-//         var currentImagePath = document.getElementById('randomImage').src;
-
-//         var imageName = currentImagePath.split('/').pop(); // Récupère juste le nom de l'image (ex: "Flag_of_France.svg.png")
-//         var countryName = Object.keys(dico_drapeau).find(key => dico_drapeau[key].includes(imageName)); // Trouve le nom du pays correspondant
-
-//         if (input.value.toLowerCase() === countryName.toLowerCase()) {
-//             var newText = document.createElement('p');
-//             newText.textContent = countryName;
-//             displayBox.appendChild(newText);
-//             document.getElementById(boxId).style.backgroundColor = "green";
-//             input.value = '';
-            
-//             gagne = 1
-
-//             // Incrémente l'index de la boîte actuelle
-//             currentBoxIndex++;
-//         }
-//         else if (input.value != '') {
-//             var newText = document.createElement('p');
-//             newText.textContent = input.value;
-//             displayBox.appendChild(newText);
-//             input.value = '';
-
-//             // Incrémente l'index de la boîte actuelle
-//             currentBoxIndex++;
-//         } 
-//     }else {
-//             console.error('Boîte non trouvée : ' + boxId);
-//         }
-//     if (gagne == 1) {
-
-//     }
-// }
 
 function addText() {
     var input = document.getElementById('text-input');
@@ -278,8 +238,6 @@ function addText() {
         if (input.value.toLowerCase() && countryName.toLowerCase()){
 
             if (input.value.toLowerCase() === countryName.toLowerCase()) {
-                newText.textContent = countryName;
-                displayBox.appendChild(newText);
                 displayBox.style.backgroundColor = "green";
                 displayBox.style.color = "white"; 
                 displayBox.style.fontSize = '5vh';
@@ -293,7 +251,11 @@ function addText() {
                     displayBox.style.fontSize = '4vh';
                 }
                 
-                gagne = 1
+                setTimeout(function() {
+                    resetPage();
+                    clique = 0; // Réactive les clics après la réinitialisation
+                }, 100);
+
                 gagnerPoint()
             }
             else if (input.value != '') {
