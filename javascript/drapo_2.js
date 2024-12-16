@@ -290,7 +290,7 @@ function testResponse(id_clicked) {
             setTimeout(function() {
                 resetPage();
                 clique = 0; // Réactive les clics après la réinitialisation
-            }, 1500);
+            }, 100);
 
         } else {
             document.getElementById('image-container' + numero).style.backgroundColor = 'red';
@@ -358,28 +358,6 @@ function gagnerPoint() {
     document.getElementById('score-drapeau2').textContent = score; // Met à jour l'affichage
 }
 
-// function passer() {
-//     var box_reponse = document.getElementById('display-box1');
-//     var currentImagePath = document.getElementById('randomImage').src;
-//     var imageName = currentImagePath.split('/').pop(); // Récupère juste le nom de l'image (ex: "Flag_of_France.svg.png")
-//     var countryName = Object.keys(dico_drapeau).find(key => dico_drapeau[key].includes(imageName)); // Trouve le nom du pays correspondant
-    
-//     resetPage();
-//     box_reponse.textContent = "C'etait " + countryName;
-//     box_reponse.style.backgroundColor = "darkorange";
-//     box_reponse.style.color = "white";
-//     box_reponse.style.fontSize = '5vh';
-
-
-
-//     if (countryName.length >= 20) {
-//         box_reponse.style.fontSize = '2.5vh';
-//     } else if (countryName.length >= 15) {
-//         box_reponse.style.fontSize = '3.3vh';
-//     } else if (countryName.length >= 10) {
-//         box_reponse.style.fontSize = '4vh';
-//     }
-// }
 
 window.onload = function() {
     var drapeau = [
